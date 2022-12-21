@@ -9,6 +9,8 @@ int main() {
         printf("IU\n");
     else if (i % 5 == 0)
         printf("IU\n");
+    else
+	printf("%d\n",i);
 
     return 0;
 }
