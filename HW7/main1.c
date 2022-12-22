@@ -25,7 +25,8 @@ int main() {
 //            5 5 5 5 5
 //           6 6 6 6 6 6
 //          7 7 7 7 7 7 7
-// Key Idea: boolean algebra, modulo (%)
+// Key Ideas: (1) counting
+//            (2) the content to print is determined by index
 // Features:
 //   (*) using two loops
 //   (1) ternary operator (a ? b : c)
