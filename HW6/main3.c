@@ -23,11 +23,11 @@ int main() {
 // Features:
 //   (1) ternary operator (a ? b : c)
 //   (2) split of printf()
-//   (2) argc/argv with loop
-//   (3) atoi() with <stdlib.h>
-//   (4) type bool <stdbool.h>
-//   (5) function & function prototype
-//   (6) C-style comments
+//   (3) argc/argv with loop
+//   (4) atoi() with <stdlib.h>
+//   (5) type bool <stdbool.h>
+//   (6) function & function prototype
+//   (7) C-style comments
 
 #include <stdio.h>       // printf()
 #include <stdlib.h>      // atoi()
@@ -53,7 +53,7 @@ bool isLeap(int year) {
     return (!(year % 4) && (year % 100)) || !(year % 400);
 }
 
-// Generate an ouput to the screen.
+// Generate an ouput and print it on the screen.
 void message(int year) {
     printf("Year %d is %s leap year.\n", year,
         isLeap(year) ? "a" : "not a");
