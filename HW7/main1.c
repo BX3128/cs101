@@ -2,19 +2,19 @@
 int main() {
     int n = 7;
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n + i; j++)
-            if (j < n - i - 1)
+        for (int j = 0; j < n + i + 1; j++)
+            if (j < n - i)
                 printf(" ");
             else if ((j - n + i) % 2)
-                printf("%d", i + 1);
-            else
                 printf(" ");
+            else
+                printf("%d", i + 1);
         printf("\n");
     }
     return 0;
 }
 
-/* HW7 - main1.c
+/*/ HW7 - main1.c
 // Instruction:
 //   1. Given an integer, n.
 //   2. Using two loops to print something like:
@@ -56,13 +56,13 @@ int main(int argc, char* argv[]) {
 // Generate an ouput and print it to the screen.
 void message(int n) {
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - i + i * 2; j++) {
-            if (j < n - i - 1)
+        for (int j = 0; j < n - i + i * 2 + 1; j++) {
+            if (j < n - i)
                 printf(" ");
             else if ((j - n + i) % 2)
-                printf("%d", i + 1);
-            else
                 printf(" ");
+            else
+                printf("%d", i + 1);
         }
         printf("\n");
     }
