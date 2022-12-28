@@ -1,7 +1,23 @@
-//* HW7 - main2.c
+#include <stdio.h>
+int main() {
+    double Pi = 0.0;
+    int i = 1;
+    for (; i<200000; i++) {
+        if (i % 2)
+            Pi += 4.0/(2*i-1);
+        else
+            Pi -= 4.0/(2*i-1);
+        if ((int) (Pi*100000) == 314159)
+            break;
+    }
+    printf("x=%d, Pi=%.5f\n", 2*i-1, (double) (int) (Pi*100000)/100000);
+    return 0;
+}
+
+/* HW7 - main2.c
 // Instruction:
 //   1. Calculate pi using Gregory-Leibniz Series:
-//        pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - ...
+//        pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - ... + (4/x)
 //   2. Find the minimum x, which makes the estimated pi
 //      accurate with 5 digits (in decimal ?), i.e.,
 //        pi = 3.14159 
@@ -19,14 +35,14 @@
 
 #include <stdio.h>       // printf()
 #include <stdlib.h>      // atoi()
-#include <stdbool.h>     // bool
+//#include <stdbool.h>     // bool
 
 // struct prototype
-/*struct BIG {
-    char value[41];
-    bool sign;
-    char point;
-};*/
+//struct BIG {
+//    char value[41];
+//    bool sign;
+//    char point;
+//};
 
 // function prototype
 void message(char* msg);
@@ -65,11 +81,11 @@ int main(int argc, char* argv[]) {
 }
 
 // struct for 41 decimal digits BIG number
-/*struct BIG {
-  char value[41];    // 0.00000 00000 00000 00000 00000 00000 00000 ....
-  bool sign = false; // false = 0 = positive;  true = 1 = negative
-  char point = 1;    // default position of floating point
-};*/
+//struct BIG {
+//  char value[41];    // 0.00000 00000 00000 00000 00000 00000 00000 ....
+//  bool sign = false; // false = 0 = positive;  true = 1 = negative
+//  char point = 1;    // default position of floating point
+//};
 
 // Generate an ouput and print it to the screen.
 void message(char* msg) {
@@ -83,14 +99,14 @@ int PI() {
     double PI = 0.0;
     int i = 1;           // iteration
 
-    for (i = 1; i < 400000; i++) {
+    for (i = 1; i < 200000; i++) {
         PI += (((i+1) % 2) * (-2) + 1) * 4.0 / (2 * i - 1);
-        if (PI - 3.14159 < 0.000001)
-            if (3.14159 - PI < 0.000001) {
-                printf("%d, %.10f\n", i, PI);
-                break;
-            }
+        //printf("%d, %.10f, %d, %f, %ld\n", i, PI, 2*i-1, 100000*PI, c);
+        if (314159 == (long) (PI*100000)) {
+            break;
+        }
     }
+    printf("%d, %.10f, %d, %f\n", i, PI, 2*i-1, 100000*PI);
     return i; 
 }
 
@@ -108,8 +124,9 @@ int PI2() {
         if (PI/er == 314159)
             break;
     }
-    printf("%d, %lld, %lld\n", i, PI, PI/er);
-    printf("x = %.12f\n", (double) (((i+1)%2)*(-2)+1)*4/(2*i-1));
+    //printf("%d, %lld, %lld\n", i, PI, PI/er);
+    //printf("x = %.12f\n", (double) (((i+1)%2)*(-2)+1)*4/(2*i-1));
+    printf("x = %d\n", 2*i-1);
     return i;
 }
 
@@ -118,10 +135,10 @@ int PI3() {
 
     
 }
-/*
-BIG add(BIG a, BIG b) {
-    return a;
-}*/
+
+//BIG add(BIG a, BIG b) {
+//    return a;
+//}
 
 void test() {
     long long a = 3141592653ll;
@@ -132,3 +149,4 @@ void test() {
     printf("%lld\n", c);
     return;
 }
+*/
