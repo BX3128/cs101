@@ -1,16 +1,9 @@
 #include <stdio.h>
 
-void test() {
-    int i;
-    printf("%d\n", i);
-}
-
 int main() {
-    int i;
-    int j;
-    test();
+    int i, j;
     for(i=0; i<100, j!=3; i++, j++) {
-        printf("i=%d, j=%d\n", i, j);
+        printf("i=%d\n", i);
     }
     return 0;
 }
